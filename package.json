@@ -7,7 +7,7 @@
     "watch": "tsc -w",
     "rebuild": "yarn clean && yarn watch",
     "dev": "next dev",
-    "build": "next build",
+    "build": "yarn clean && yarn db-gen && next build",
     "start": "next start",
     "lint": "next lint",
     "db-migrate": "npx prisma migrate dev",
