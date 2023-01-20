@@ -17,11 +17,11 @@ export default function Home() {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main>
-        <div className='sticky top-0 w-full lg:w-[80%] lg:m-auto bg-primary z-50 p-2'>
-          <h1 className='text-xl text-primary-content'>{conversions}</h1>
+        <div className='sticky top-0 w-full lg:w-[80%] lg:m-auto bg-primary z-50 p-6 shadow-xl shadow-black'>
+          <h1 className='text-xl text-primary-content font-bold uppercase ml-4'>{conversions}</h1>
           <progress className='progress progress-success h-6' value={Number.isNaN(perc) ? 0 : perc} max={100} />
         </div>
-        <div className='flex flex-col px-4 w-full lg:w-[80%] lg:m-auto'>
+        <div className='flex flex-col px-4 pt-8 w-full lg:w-[80%] lg:m-auto'>
         {modules.map((module) => 
           <ConversionModuleUI module={module} key={module.id} />
         )}
