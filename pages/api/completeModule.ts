@@ -1,10 +1,10 @@
-import { completeTask } from "@/prisma/PrismaContext"
+import { completeModule } from "@/prisma/PrismaContext"
 import { NextApiRequest, NextApiResponse } from "next"
 
 const handle = async (req: NextApiRequest, res: NextApiResponse) => {
-    const {id, complete} = req.body
-    console.log(`/api/completeTask {${id} ${complete}}`)
-    const completed = await completeTask(id, complete)
+    const {id} = req.body
+    console.log(`/api/completeModule {${id}}`)
+    const completed = await completeModule(id)
     let status = 500,
         message = `Ya that didn't work...`;
     if (completed) {

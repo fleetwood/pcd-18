@@ -1,30 +1,37 @@
-import { ConversionFileDetails } from "@/prisma/PrismaContext"
-import ProgressBar from "./ProgressBar"
 import React, { useEffect, useState } from "react"
 import useApiQuery from "@/hooks/useApiQuery"
-import { ConversionCommand } from ".prisma/client"
+import { ConversionCommand, ConversionModule, ConversionFile } from ".prisma/client"
 
 type ConversionFileProps = {
   command: ConversionCommand
+  file: ConversionFile
+  module: ConversionModule
+  onCommandUpdate: Function
 }
 
-const ConversionCommandUI = ({ command }: ConversionFileProps) => {
-  const { complete, updateAll, invalidateQuery } = useApiQuery()
-  const [status, setStatus] = useState('info')
+const ConversionCommandUI = ({command, file, module, onCommandUpdate}: ConversionFileProps) => {
+  const { completeCommand, invalidateQuery } = useApiQuery()
+  const [status, setStatus] = useState('bg-accent')
 
   useEffect(() => {
-    setStatus(command.complete ? 'success' : 'info')
+    setStatus(command.complete ? 'bg-success' : 'bg-accent')
   }, [command])
 
   const handleComplete = async () => {
-    complete(command.id, !command.complete)
-      .then(async () => await updateAll())
-      .then(async () => await invalidateQuery())
-      .catch((e) => alert(e))
+    console.log(`ConversionCommandUI handleComplete`)
+    await completeCommand(command.id, !(command.complete))
+      .then(async () => {
+        console.log(`\tConversionCommandUI handleCompleted`)
+        onCommandUpdate()
+      })
+      .then(() => setStatus(current => !(command.complete) ? 'bg-success' : 'bg-accent'))
+      .catch((e) => 
+        console.log(`\tConversionCommandUI update FAIL ${e.message}`)
+      )
   }
 
   return (
-    <div className={`flex bg-secondary even:bg-opacity-20 odd:bg-opacity-30 my-2 rounded-full`} key={command.id}>
+    <div className={`flex ${status} even:bg-opacity-20 odd:bg-opacity-30 my-2 rounded-full`} key={command.id}>
       <div onClick={(e) => {
           // e.preventDefault
           // e.bubbles = false
@@ -41,8 +48,11 @@ const ConversionCommandUI = ({ command }: ConversionFileProps) => {
           </div>
         )}
       </div>
-      <div className={`text-sm text-secondary-content px-2 overflow-x-hidden font-mono`}>
-        {command.code}
+      <div className={`text-sm ${command.complete ? 'text-success-content':'text-accent-content'} px-2 overflow-x-hidden font-mono flex space-x-4`}>
+        <div>{module.id}</div>
+        <div>{file.id}</div>
+        <div>{command.complete}</div>
+        <pre>{JSON.stringify(command,null,2)}</pre>
       </div>
     </div>
   )

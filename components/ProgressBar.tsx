@@ -7,6 +7,12 @@ type ProgressBarProps = {
   variant?: "h1" | "h2" | "bold";
 };
 
+/**
+ * @param title (@type {string} The title of the progress bar)
+ * @param progress (@type {number}  Number between 0 and 100)
+ * @param isComplete (@type {boolean?} optional - is it complete? default is false)
+ * @param variant (@type {'h1' | 'h2' | 'bold'} optional - default is 'bold')
+ */
 const ProgressBar = ({
   title,
   progress,

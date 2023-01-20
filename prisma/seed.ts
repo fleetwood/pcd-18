@@ -8,7 +8,7 @@ const conversion =  [
         "create": [
           {
             "name": "util.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "33 exec('npm run --prefix /opt/pcn init:db', $output);"
@@ -25,7 +25,7 @@ const conversion =  [
         "create": [
           {
             "name": "applyVideoPlaylist.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "25 exec('mv  ' . $filePath . ' /home/media/.');"
@@ -41,7 +41,7 @@ const conversion =  [
           },
           {
             "name": "lg_api.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "39 exec('rm -rf /opt/procentric/persistentData/products/EPGApp/filesystem/data'); // delete data folder"
@@ -76,7 +76,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "228 @shell_exec(\"mysql -u{$dbConfig['username']} -p{$dbConfig['password']} {$pkgOptions['ptDatabase']} < \" . $sqlFilePath);"
@@ -102,7 +102,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "174 if (!@exec(\"/sbin/ifconfig tun0; echo $?\")) {"
@@ -131,7 +131,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "1113 $server_ip_em2 = @exec(\"hostname -I | awk {'print $2'}\");"
@@ -157,7 +157,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "1659 exec('echo \"curl ' . $vod_manager->getExecuteNowPathUrl() . '\" |at now');"
@@ -174,7 +174,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "745 exec('chmod 0777 ' . $path); //  ?? ??"
@@ -287,7 +287,7 @@ const conversion =  [
         "create": [
           {
             "name": "network.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "19 <dd id=\"hostAddress\"><?=@exec(\"ip addr show $(ip l |grep -E '^2:' |awk '{print $2}' |awk -F: '{print $1}') |grep 'inet ' |awk '{print $2}' |awk -F/ '{print $1}'\");?></dd>"
@@ -304,7 +304,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "2937 shell_exec(\"rm -rf \" . $output_dir . \"/*\");"
@@ -384,7 +384,7 @@ const conversion =  [
         "create": [
           {
             "name": "openapi.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "104 $curl_result = curl_exec($curl);"
@@ -401,7 +401,7 @@ const conversion =  [
         "create": [
           {
             "name": "get_tv_status.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "63 $curlResponse = curl_exec($ch);"
@@ -418,7 +418,7 @@ const conversion =  [
         "create": [
           {
             "name": "QMS.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "3 $server_ip_em2 = @exec(\"hostname -I | awk {'print $2'}\");"
@@ -435,7 +435,7 @@ const conversion =  [
         "create": [
           {
             "name": "CronManager.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "98 $output = shell_exec($command);"
@@ -470,7 +470,7 @@ const conversion =  [
         "create": [
           {
             "name": "ChannelIconsImporter.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "145 exec($command);"
@@ -483,7 +483,7 @@ const conversion =  [
           },
           {
             "name": "ImportManager.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "225 exec($command);"
@@ -493,7 +493,7 @@ const conversion =  [
           },
           {
             "name": "ProjectImporter.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "338 exec('basename $(ls /home/updates/[1-9]*/*/*-update |tail -n1)', $output, $dummy);"
@@ -503,7 +503,7 @@ const conversion =  [
           },
           {
             "name": "ServerImporter.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "593 $curlResponse = curl_exec($ch);"
@@ -513,7 +513,7 @@ const conversion =  [
           },
           {
             "name": "SmartAppsImporter.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "194 exec(\"mkdir -p $destination\"); // create directory"
@@ -539,7 +539,7 @@ const conversion =  [
         "create": [
           {
             "name": "EAManager.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "126 exec($at_statement);"
@@ -549,7 +549,7 @@ const conversion =  [
           },
           {
             "name": "FetchManager.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "193 exec($command);"
@@ -565,7 +565,7 @@ const conversion =  [
           },
           {
             "name": "VodManager.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "140 exec($at_statement);"
@@ -585,7 +585,7 @@ const conversion =  [
         "create": [
           {
             "name": "Mode.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "177 exec('/usr/bin/nohup /usr/bin/sudo /usr/pcstools/uni_or_multicast.sh > /dev/null 2>&1 &'); // allow process to continue running while apache is restarting"
@@ -595,7 +595,7 @@ const conversion =  [
           },
           {
             "name": "Unicast.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "354 exec(\"rm -rf \" . $this->getFirmwareDirectory() . \"/*\");"
@@ -624,7 +624,7 @@ const conversion =  [
         "create": [
           {
             "name": "TrustedIpDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "148 $server_ip_em2 = @exec(\"hostname -I | awk {'print $2'}\");"
@@ -637,7 +637,7 @@ const conversion =  [
           },
           {
             "name": "AbstractDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "58 if($this->connection->exec($sql) !== false) {"
@@ -647,7 +647,7 @@ const conversion =  [
           },
           {
             "name": "ChannelGroupJsonDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "196 exec(\"rm -rf \".SystemPaths::$CAROUSEL_APP . \"/channelGroups.json\");"
@@ -660,7 +660,7 @@ const conversion =  [
           },
           {
             "name": "ChannelJsonDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "49 exec('rm -rf ' . SystemPaths::$CAROUSEL_APP . 'channels.json');"
@@ -673,7 +673,7 @@ const conversion =  [
           },
           {
             "name": "GroupJsonDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "382 exec('rm -rf /opt/procentric/persistentData/products/EPGApp/filesystem/groups.json');"
@@ -695,7 +695,7 @@ const conversion =  [
           },
           {
             "name": "LanguageDAO.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "194 exec('chmod 0777 ' . $path);"
@@ -715,7 +715,7 @@ const conversion =  [
         "create": [
           {
             "name": "Api.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "38 exec('rm -rf /opt/procentric/persistentData/products/EPGApp/filesystem/data'); // delete data folder"
@@ -750,7 +750,7 @@ const conversion =  [
         "create": [
           {
             "name": "SettingsMenu.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "213 $available_space = shell_exec(escapeshellcmd(\"zfs list -H -o available tank/var/procentric/media\"));"
@@ -776,7 +776,7 @@ const conversion =  [
         "create": [
           {
             "name": "CurlClient.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "125 $curlResponse = curl_exec($curl);"
@@ -898,7 +898,7 @@ const conversion =  [
         "create": [
           {
             "name": "index.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "12 $server_ip = @exec('ip addr show eth0 |grep 'inet ' |awk '{print $2}' |awk -F/ '{print $1}'');"
@@ -915,7 +915,7 @@ const conversion =  [
         "create": [
           {
             "name": "controller.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "3808 //exec('sudo chmod 777 /var/www/html/phoenixphpclient/application/files -R');"
@@ -935,7 +935,7 @@ const conversion =  [
         "create": [
           {
             "name": "login.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "57 //$res = shell_exec('find /var/lib/php/session/ -cmin +1 -type f | xargs rm 2> /dev/null');"
@@ -952,7 +952,7 @@ const conversion =  [
         "create": [
           {
             "name": "ImageImporter.php",
-            "commands": {
+            "ConversionCommand": {
               "create": [
                 {
                   "code": "158 exec($at_command, $output, $dummy)"
@@ -964,21 +964,6 @@ const conversion =  [
       }
     }
   ]
-
-//   {
-//     name: 'ModuleOne',
-//     files: {
-//         create:[
-//             {
-//                 name: 'FileOne',
-//                 commands:{
-//                     create: [{
-//                         code: 'This is a teste command'
-//                     }]
-//                 }
-//             }
-//         ]
-//     }}
 
 type module = {
     name: string
