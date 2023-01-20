@@ -4,7 +4,7 @@ import useApiQuery from '@/hooks/useApiQuery'
 
 export default function Home() {
   const {modules} = useApiQuery()
-  const allTasks = modules.map(m=> m.files.map( f => f.commands.map(c => c))).flat(3)
+  const allTasks = modules.map(m=> m.files.map( f => f.ConversionCommand.map(c => c))).flat(3)
   const completeTasks = allTasks.filter( t => t.complete).length
   const perc = Math.floor(completeTasks/allTasks.length*100)
   const conversions = `All Conversions : (${completeTasks}/${allTasks.length})`
