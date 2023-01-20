@@ -6,8 +6,8 @@ generator client {
 }
 
 datasource db {
-  provider = "sqlite"
-  url      = "file:./conversion.db"
+  provider = "cockroachdb"
+  url      = env("DATABASE_URL")
 }
 
 model ConversionCommand {
