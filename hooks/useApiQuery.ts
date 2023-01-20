@@ -13,7 +13,7 @@ const useApiQuery = () => {
     
     useQuery([getAllModulesQuery],
         getModules, 
-        { refetchInterval: 10000}
+        { refetchInterval: 1000}
     )
 
     const complete = (id:string, complete: boolean) => {
