@@ -1,0 +1,35 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = "file:./conversion.db"
+}
+
+model ConversionCommand {
+  id         String         @id @default(cuid())
+  complete   Boolean        @default(false)
+  code       String
+  moduleId   String
+  moduleFile ConversionFile @relation(fields: [moduleId], references: [id])
+}
+
+model ConversionFile {
+  id       String              @id @default(cuid())
+  complete Boolean             @default(false)
+  commands ConversionCommand[]
+  name     String
+  moduleId String
+  module   ConversionModule    @relation(fields: [moduleId], references: [id])
+}
+
+model ConversionModule {
+  id       String           @id @default(cuid())
+  complete Boolean          @default(false)
+  name     String
+  files    ConversionFile[]
+}
