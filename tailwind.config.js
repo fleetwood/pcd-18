@@ -8,10 +8,18 @@ module.exports = {
     extend: {},
   },
   daisyui: {
-    themes: ["light", "dark", "cupcake", "luxury", "coffee", "winter"],
+    themes: [
+      "luxury",
+      "aqua",
+      "coffee",
+      "cupcake",
+      "cyberpunk",
+      "dark",
+      "dracula",
+      "light",
+      "retro",
+      "winter",
+    ],
   },
-  plugins: [
-    require("daisyui"),
-    require('tailwind-scrollbar'),
-  ],
-}
+  plugins: [require("daisyui"), require("tailwind-scrollbar")],
+};
